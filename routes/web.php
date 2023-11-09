@@ -37,6 +37,8 @@ Route::get("/service", [PageController::class, "service"]);
 Route::get("/portofolio", [PageController::class, "portofolio"]);
 Route::get("/blog", [PageController::class, "blog"]);
 Route::get("/contact", [PageController::class, "contact"]);
+Route::get("/portofolio/{id}", [PageController::class, "detailPorto"]);
+Route::get("/blog/{id}", [PageController::class, "detailBlog"]);
 
 // ADMIN
 Route::prefix('admin')->middleware(['auth:web'])->group(function () {

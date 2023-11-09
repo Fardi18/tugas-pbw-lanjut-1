@@ -14,7 +14,7 @@ class PortoController extends Controller
      */
     public function index()
     {
-        $portos = Porto::with("portocategory")->get();
+        $portos = Porto::with("portocategory");
         // dd($portos);
         return view("admin.portofolio.index", ["portos" => $portos]);
     }

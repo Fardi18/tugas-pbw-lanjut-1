@@ -55,11 +55,12 @@
                                                 class="w-date">{{ $porto->tanggal }}</span>
                                         </div>
                                     </div>
-                                    {{-- <div class="col-sm-4">
+                                    <div class="col-sm-4">
                                         <div class="w-like">
-                                            <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
+                                            <a href="portofolio/{{ $porto->id }}"> <span
+                                                    class="bi bi-plus-circle"></span></a>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
