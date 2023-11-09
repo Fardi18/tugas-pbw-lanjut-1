@@ -13,8 +13,8 @@
             <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="{{ asset('/dashboard') }}/assets/img/profile-img.jpg" alt="Profile"
-                        class="rounded-circle">
+                    <img src="/assets/img/aing.jpg" alt="Profile" class="rounded-circle"
+                        style="object-fit: cover; width: 36px; height: 60px;">
                     @auth
                         {{-- <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span> --}}
                     @endauth

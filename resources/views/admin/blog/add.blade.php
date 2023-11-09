@@ -38,6 +38,18 @@
                                 @enderror
                             </div>
                             <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Deskripsi</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control @error('description') is-invalid @enderror"
+                                        name="description">
+                                </div>
+                                @error('description')
+                                    <div class="invalid-feedback">
+                                        Deskripsi tidak boleh kosong
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="row mb-3">
                                 <label for="inputPassword" class="col-sm-2 col-form-label">Content</label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control @error('content') is-invalid @enderror" style="height: 100px" name="content"></textarea>

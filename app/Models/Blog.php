@@ -13,6 +13,7 @@ class Blog extends Model
         'image',
         'title',
         'content',
+        'description',
         'blogcategory_id',
     ];
 

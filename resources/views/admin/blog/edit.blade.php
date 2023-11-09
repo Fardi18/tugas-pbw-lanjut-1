@@ -1,15 +1,15 @@
 @extends('admin.template.app')
 
-@section('title', 'Edit Porto')
+@section('title', 'Edit Blog')
 
 @section('content')
     <div class="pagetitle">
-        <h1>Edit Porto</h1>
+        <h1>Edit Blog</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="/admin/porto">Porto</a></li>
-                <li class="breadcrumb-item active">Edit Porto</li>
+                <li class="breadcrumb-item"><a href="/admin/blog">Blog</a></li>
+                <li class="breadcrumb-item active">Edit Blog</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -20,28 +20,29 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Edit Porto</h5>
+                        <h5 class="card-title">Edit Blog</h5>
 
                         <!-- General Form Elements -->
-                        <form action="/admin/porto/{{ $porto->id }}" method="POST" enctype="multipart/form-data">
+                        <form action="/admin/blog/{{ $blog->id }}" method="POST" enctype="multipart/form-data">
                             @method('put')
                             @csrf
                             <div class="row mb-3">
-                                <label for="inputText" class="col-sm-2 col-form-label">Nama Porto</label>
+                                <label for="inputText" class="col-sm-2 col-form-label">Judul</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="name" value="{{ $porto->name }}">
+                                    <input type="text" class="form-control @error('title') is-invalid @enderror"
+                                        name="title" value="{{ $blog->title }}">
                                 </div>
-                                @error('name')
+                                @error('title')
                                     <div class="invalid-feedback">
-                                        Nama tidak boleh kosong
+                                        Judul tidak boleh kosong
                                     </div>
                                 @enderror
                             </div>
                             <div class="row mb-3">
-                                <label for="inputPassword" class="col-sm-2 col-form-label">Deskripsi Singkat</label>
+                                <label for="inputText" class="col-sm-2 col-form-label">Deskripsi</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control @error('description') is-invalid @enderror" style="height: 100px" name="description">{{ $porto->description }}</textarea>
+                                    <input type="text" class="form-control @error('description') is-invalid @enderror"
+                                        name="description" value="{{ $blog->description }}">
                                 </div>
                                 @error('description')
                                     <div class="invalid-feedback">
@@ -50,32 +51,31 @@
                                 @enderror
                             </div>
                             <div class="row mb-3">
-                                <label for="inputDate" class="col-sm-2 col-form-label">Tanggal</label>
+                                <label for="inputPassword" class="col-sm-2 col-form-label">Content</label>
                                 <div class="col-sm-10">
-                                    <input type="date" class="form-control @error('tanggal') is-invalid @enderror"
-                                        name="tanggal" value="{{ $porto->tanggal }}">
+                                    <textarea class="form-control @error('content') is-invalid @enderror" style="height: 100px" name="content">{!! $blog->content !!}</textarea>
                                 </div>
-                                @error('tanggal')
+                                @error('content')
                                     <div class="invalid-feedback">
-                                        Tanggal tidak boleh kosong
+                                        Content tidak boleh kosong
                                     </div>
                                 @enderror
                             </div>
                             <div class="row mb-3">
-                                <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Porto</label>
+                                <label for="inputNumber" class="col-sm-2 col-form-label">Thumbnail</label>
                                 <div class="col-sm-10">
                                     <input class="form-control @error('image') is-invalid @enderror" type="file"
                                         name="image">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Kategori Porto</label>
+                                <label class="col-sm-2 col-form-label">Kategori Blog</label>
                                 <div class="col-sm-10">
-                                    <select class="form-select @error('portocategory_id') is-invalid @enderror"
-                                        aria-label="Default select example" name="portocategory_id">
-                                        <option selected>{{ $porto->portocategory->name }}</option>
-                                        @foreach ($porto_categories as $porto_category)
-                                            <option value="{{ $porto_category->id }}">{{ $porto_category->name }}</option>
+                                    <select class="form-select @error('blogcategory_id') is-invalid @enderror"
+                                        aria-label="Default select example" name="blogcategory_id">
+                                        <option selected>{{ $blog->blogcategory->name }}</option>
+                                        @foreach ($blog_categories as $blog_category)
+                                            <option value="{{ $blog_category->id }}">{{ $blog_category->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -92,4 +92,10 @@
             </div>
         </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('content');
+    </script>
 @endsection

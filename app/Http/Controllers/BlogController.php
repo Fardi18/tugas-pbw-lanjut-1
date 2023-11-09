@@ -37,6 +37,7 @@ class BlogController extends Controller
             'image'     => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'title'     => 'required|min:5',
             'content'   => 'required|min:10',
+            'description'   => 'required|min:10',
             'blogcategory_id' => 'required',
         ]);
         //upload image
@@ -46,6 +47,7 @@ class BlogController extends Controller
         Blog::create([
             "title" => $validated["title"],
             "content" => $validated["content"],
+            "description" => $validated["description"],
             "blogcategory_id" => $validated["blogcategory_id"],
             'image' => $saveImage['image']
         ]);
@@ -61,7 +63,7 @@ class BlogController extends Controller
     {
         $blog = Blog::with('blogcategory')->findOrFail($id);
         $blog_categories = BlogCategory::all();
-        return view('admin.portofolio.edit', ['blog' => $blog, 'blog_categories' => $blog_categories]);
+        return view('admin.blog.edit', ['blog' => $blog, 'blog_categories' => $blog_categories]);
     }
 
     /**
@@ -75,6 +77,7 @@ class BlogController extends Controller
         $validated = $request->validate([
             "title" => "string",
             "content" => "string",
+            "description" => "string",
             "blogcategory_id" => "",
             'image' => 'mimes:jpg,jpeg,png|max:5120' // Menghapus 'required' untuk gambar
         ]);
@@ -95,6 +98,7 @@ class BlogController extends Controller
         Blog::where('id', $id)->update([
             "title" => $validated["title"],
             "content" => $validated["content"],
+            "description" => $validated["description"],
             "blogcategory_id" => $validated["blogcategory_id"],
             'image' => $newImage['image']
         ]);

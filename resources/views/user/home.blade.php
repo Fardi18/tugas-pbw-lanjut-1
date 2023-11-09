@@ -257,11 +257,12 @@
                                                     class="w-date">{{ $porto->tanggal }}</span>
                                             </div>
                                         </div>
-                                        {{-- <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
+                                        <div class="col-sm-4">
+                                            <div class="w-like">
+                                                <a href="portofolio/{{ $porto->id }}"> <span
+                                                        class="bi bi-plus-circle"></span></a>
+                                            </div>
                                         </div>
-                                    </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -299,8 +300,8 @@
                         <div class="col-md-4">
                             <div class="card card-blog">
                                 <div class="card-img">
-                                    <a href="blog-single.html"><img src="{{ Storage::url($blog->image) }}" alt=""
-                                            class="img-fluid"></a>
+                                    <a href="/blog/{{ $blog->id }}"><img src="{{ Storage::url($blog->image) }}"
+                                            alt="" class="img-fluid"></a>
                                 </div>
                                 <div class="card-body">
                                     <div class="card-category-box">
@@ -310,12 +311,12 @@
                                     </div>
                                     <h3 class="card-title"><a href="blog-single.html">{{ $blog->title }}</a></h3>
                                     <p class="card-description">
-                                        {!! $blog->content !!}
+                                        {{ $blog->description }}
                                     </p>
                                 </div>
                                 <div class="card-footer">
                                     <div class="post-author">
-                                        <a href="#">
+                                        <a href="">
                                             <img src="assets/img/aing.jpg" alt="" class="avatar rounded-circle">
                                             <span class="author">Fardi Khalik Ramadhan</span>
                                         </a>
