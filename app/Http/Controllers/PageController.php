@@ -47,7 +47,7 @@ class PageController extends Controller
 
     public function detailBlog($id)
     {
-        $blogs = Blog::paginate(5);
+        $blogs = Blog::orderBy('id', 'DESC')->paginate(5);
         $blogcategories = BlogCategory::get();
         $blog = Blog::with("blogcategory")->findOrFail($id);
         return view("user.detailblog", ["blog" => $blog, "blogcategories" => $blogcategories, "blogs" => $blogs]);

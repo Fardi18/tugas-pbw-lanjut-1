@@ -414,12 +414,14 @@
                                         </div>
                                         <div class="socials">
                                             <ul>
-                                                <li><a href=""><span class="ico-circle"><i
-                                                                class="bi bi-instagram"></i></span></a></li>
-                                                <li><a href=""><span class="ico-circle"><i
+                                                <li><a href="https://www.instagram.com/fardi_nasution/"><span
+                                                            class="ico-circle"><i class="bi bi-instagram"></i></span></a>
+                                                </li>
+                                                <li><a href="https://github.com/Fardi18"><span class="ico-circle"><i
                                                                 class="bi bi-github"></i></span></a></li>
-                                                <li><a href=""><span class="ico-circle"><i
-                                                                class="bi bi-linkedin"></i></span></a></li>
+                                                <li><a href="https://www.linkedin.com/in/fardi-khalik-ramadhan/"><span
+                                                            class="ico-circle"><i class="bi bi-linkedin"></i></span></a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
