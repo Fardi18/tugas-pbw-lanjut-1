@@ -309,7 +309,8 @@
                                             <h6 class="category">{{ $blog->blogcategory->name }}</h6>
                                         </div>
                                     </div>
-                                    <h3 class="card-title"><a href="blog-single.html">{{ $blog->title }}</a></h3>
+                                    <h3 class="card-title"><a href="/blog/{{ $blog->id }}">{{ $blog->title }}</a>
+                                    </h3>
                                     <p class="card-description">
                                         {{ $blog->description }}
                                     </p>
